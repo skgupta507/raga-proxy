@@ -14,7 +14,11 @@ func main() {
 		ProxyHeader:             fiber.HeaderXForwardedFor,
 	})
 
-	app.Get("/:id/:path", func(c *fiber.Ctx) error {
+	app.Get("/media/:id/:path", func(c *fiber.Ctx) error {
+		utils.ProxyRequest(c, "https://c.saavncdn.com/"+c.Params("id")+"/"+c.Params("path"))
+		return nil
+	})
+	app.Get("/aac/:id/:path", func(c *fiber.Ctx) error {
 		utils.ProxyRequest(c, "https://c.saavncdn.com/"+c.Params("id")+"/"+c.Params("path"))
 		return nil
 	})
