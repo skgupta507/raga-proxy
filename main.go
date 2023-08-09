@@ -19,7 +19,7 @@ func main() {
 		return nil
 	})
 	app.Get("/aac/:id/:path", func(c *fiber.Ctx) error {
-		utils.ProxyRequest(c, "https://c.saavncdn.com/"+c.Params("id")+"/"+c.Params("path"))
+		utils.ProxyRequest(c, "https://aac.saavncdn.com/"+c.Params("id")+"/"+c.Params("path"))
 		return nil
 	})
 	app.Listen(GetPort())
