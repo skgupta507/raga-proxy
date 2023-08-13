@@ -1,4 +1,4 @@
-module codeberg.org/aryak/paattu-proxy
+module codeberg.org/aryak/raga-proxy
 
 go 1.19
 
