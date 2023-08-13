@@ -22,6 +22,10 @@ func main() {
 		utils.ProxyRequest(c, "https://aac.saavncdn.com/"+c.Params("id")+"/"+c.Params("path"))
 		return nil
 	})
+	app.Get("/svg/+", func(c *fiber.Ctx) error {
+		utils.ProxyRequest(c, "https://www.jiosaavn.com/"+c.Params("+"))
+		return nil
+	})
 	app.Listen(GetPort())
 }
 
